@@ -1,0 +1,32 @@
+CS1300: Development
+
+Running Development:
+
+Run python -m SimpleHTTPServer from the project directory, then point your
+browser to localhost:8000
+
+This page is not hosted online and must be run locally.
+
+Filtering:
+
+Currently there are two forms of filtering: price and brand. Price is filtered
+by setting a minimum and maximum price range; brand is filtered by selecting
+the brands you want from the checkboxes. If no price is entered or no brands
+are selected, nothing is filtered.
+
+Project structure:
+
+The app has 3 core components: CheckboxGroup, ShoeComponent and ShoeList. The
+ShoeList is the top level container, and its state includes the original list
+of shoes, the current list of shoes and current filter settings. The ShoeComponent
+is self-explanatory; it has no state and just renders a shoe. The CheckboxGroup
+is a wrapper of sorts, containing a number of checkboxes and maintaining a
+dictionary structure to keep track of their status. If a checkbox's status
+changes the CheckboxGroup then notifies the ShoeList of the change, and the
+ShoeList then filters accordingly.
+
+Originally the CheckboxGroup's state was directly tied to the ShoeList's state
+(i.e. there was no notification step); this seemed a lot more elegant and was
+more reflective of the app's actual state. However, for some reason this didn't
+work; as such the CheckboxGroup has it's own state that in turn updates the
+ShoeList's state.
