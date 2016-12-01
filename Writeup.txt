@@ -30,3 +30,7 @@ Originally the CheckboxGroup's state was directly tied to the ShoeList's state
 more reflective of the app's actual state. However, for some reason this didn't
 work; as such the CheckboxGroup has it's own state that in turn updates the
 ShoeList's state.
+
+There are a number of sub-components, namely the Checkbox and List. These are
+sub-components of the CheckboxGroup and ShoeList respectively and make for
+slightly more modular/cleaner code.
