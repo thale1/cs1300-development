@@ -13,9 +13,9 @@ var ShoeComponent = React.createClass({
         return (
             <div className='shoe'>
                 <img className='shoeImage' src={this.props.img}/>
-                <div>{this.props.name}</div>  
-                <div>{'$'+this.props.price}</div>           
-            </div>            
+                {this.props.name} <br/> 
+                {'$'+this.props.price}  
+            </div>         
         );
     }
 });

@@ -23,6 +23,39 @@
     float: right;
 }
 
+div.button input {
+    display: none;
+}
+
+div.button input:checked ~ label {
+    background-color: darkgrey;
+    color: white;
+}
+
+#top.button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: -0.5em;
+}
+
+div.button label {
+    width: 2em;
+    text-align: center;
+    font-size: 0.9em;
+    margin: 2px;
+    padding: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 5px;
+}
+
+div.button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
 .form {
     flex-grow: 0;
     width: 160px;

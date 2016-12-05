@@ -24,10 +24,10 @@ var CheckboxGroup = React.createClass({
         this.props.update(newList);
     },
     makeCheckbox(b) {
-        return (<Checkbox key={b} label={b} handleChange={this.toggleValue}/>);
+        return (<Checkbox key={b} label={b} handleChange={this.toggleValue} className={this.props.className}/>);
     },
     render: function() {
-        return (<div>
+        return (<div className={this.props.className} id='top'>
                 {this.props.labels.map(this.makeCheckbox)}
             </div>);
     }
@@ -50,13 +50,15 @@ var Checkbox = React.createClass({
     },
     render: function() {
         return (
-        <div className="checkbox">
-            <label>
+        <div className="checkbox" className={this.props.className}>
+            
                 <input type="checkbox" 
                           value={this.props.label}
+                    id={this.props.label}
                         key={this.props.label}
                           checked={this.state.isChecked} 
                           onChange={this.toggleCheckbox} />
+                <label htmlFor={this.props.label}>
 
                 {this.props.label}
             </label>
